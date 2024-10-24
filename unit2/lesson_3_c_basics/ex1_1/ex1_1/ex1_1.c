@@ -1,0 +1,24 @@
+/*
+ * ex1_1.c
+ *
+ *  Created on: Oct 15, 2024
+ *      Author: 01226
+ */
+
+#include <stdio.h>
+int a =0;
+int main(){
+	printf("enter the number: ");
+	fflush(stdout);
+	scanf("%d",&a);
+
+	if(a%2==0){
+		printf("the number %d is even",a);
+		fflush(stdout);
+	}else{
+		printf("the number %d is odd",a);
+		fflush(stdout);
+	}
+
+	return 0;
+}
