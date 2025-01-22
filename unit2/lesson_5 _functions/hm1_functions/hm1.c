@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <math.h>
+
+// Function to check if a number is prime
+int isprime(int x) {
+    if (x <= 1)
+        return 0; // Numbers less than or equal to 1 are not prime
+
+    for (int i = 2; i <= sqrt(x); i++) {
+        if (x % i == 0) {
+            return 0; // Not prime if divisible by any number
+        }
+    }
+    return 1; // Prime if no divisors found
+}
+
+int main() {
+    int a, b, i, flag;
+
+    // Prompt for input
+
+    fflush (stdout);
+
+     printf("Enter the lower bound: ");
+     fflush (stdout);
+     scanf("%d", &a);
+
+
+     printf("Enter the upper bound: ");
+     fflush (stdout);
+     scanf("%d", &b);
+
+
+    // Print the prime numbers between a and b
+    printf("Prime numbers between %d and %d are: ", a, b);
+    for (i = a; i <= b; i++) {
+        flag = isprime(i);
+        if (flag == 1) {
+            printf("%d ", i); // Print with a space for readability
+        }
+    }
+    printf("\n"); // Print a newline at the end for better formatting
+
+    return 0;
+}

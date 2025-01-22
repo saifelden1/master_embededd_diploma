@@ -1,0 +1,54 @@
+/*
+ * main.c
+ *
+ *  Created on: Dec 8, 2024
+ *      Author: 01226
+ */
+#include <stdio.h>
+#include <math.h>
+void isprime (int start , int end)
+{
+	for(int num=start ; num<=end ; num++)
+	{
+		if(num<1)
+		{
+			continue;
+		}
+		int prime=1;
+	for(int i=2 ; i<=sqrt(num) ; i++)
+	{
+
+		if(num%i==0)
+		{
+			prime=0;
+		    break;
+		}
+	}
+		if(prime==1)
+		{
+			printf("%d",num);
+			printf("\t");
+			fflush(stdout);
+		}
+	}
+}
+
+int main()
+{
+	int start,end;
+
+	printf("enter the start number ");
+	fflush(stdout);
+	scanf("%d",&start);
+
+	printf("enter the end number ");
+	fflush(stdout);
+	scanf("%d",&end);
+
+	isprime(start,end);
+
+
+    return 0;
+}
+
+

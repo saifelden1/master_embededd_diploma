@@ -1,0 +1,10 @@
+14:43:58 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8056	     20	   1644	   9720	   25f8	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+
+14:43:58 Build Finished. 0 errors, 0 warnings. (took 450ms)
+

@@ -1,0 +1,32 @@
+
+#include<stdio.h>
+
+int main(){
+	int mat [100]={1,2,3,4,5,6,7};
+	int var;
+	int i;
+	int size=7;
+
+	for(i=0 ; i<8 ; i++)
+		{
+			printf( "%d" , mat[i] );
+			fflush(stdout);
+		}
+
+	printf("\nenter the variable: ");
+	fflush(stdout);
+	scanf("%d",&var);
+
+
+	for(i=0 ; i<size ; i++)
+	{
+		if(mat[i]== var)
+			break;
+
+	}
+
+	printf("the element is found at order %d",i+1);
+ return 0;
+}
+
+

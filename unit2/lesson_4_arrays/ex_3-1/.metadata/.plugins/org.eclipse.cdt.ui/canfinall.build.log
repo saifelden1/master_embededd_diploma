@@ -1,0 +1,10 @@
+12:04:05 **** Incremental Build of configuration Debug for project canfinall ****
+make -j16 all 
+arm-none-eabi-size  canfinall.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7848	     20	   1620	   9488	   2510	canfinall.elf
+Finished building: default.size.stdout
+ 
+
+12:04:05 Build Finished. 0 errors, 0 warnings. (took 453ms)
+

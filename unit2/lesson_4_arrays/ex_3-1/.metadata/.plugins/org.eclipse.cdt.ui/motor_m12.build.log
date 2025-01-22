@@ -1,0 +1,24 @@
+15:11:55 **** Incremental Build of configuration Debug for project motor_m12 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+arm-none-eabi-gcc -o "motor_m12.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\01226\Desktop\motor\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor_m12.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor_m12.elf
+ 
+arm-none-eabi-size  motor_m12.elf 
+arm-none-eabi-objdump -h -S motor_m12.elf  > "motor_m12.list"
+   text	   data	    bss	    dec	    hex	filename
+  19808	     28	   1980	  21816	   5538	motor_m12.elf
+arm-none-eabi-objcopy  -O ihex motor_m12.elf  "motor_m12.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary motor_m12.elf  "motor_m12.bin"
+ 
+Finished building: motor_m12.hex
+Finished building: motor_m12.bin
+ 
+ 
+Finished building: motor_m12.list
+ 
+
+15:11:56 Build Finished. 0 errors, 0 warnings. (took 1s.375ms)
+

@@ -1,0 +1,867 @@
+12:15:04 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'can_send':
+../Core/Src/main.c:53:72: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   53 |                         HAL_CAN_AddTxMessage(&hcan , &THeader , DATA , &mailbox);
+      |                                                                        ^~~~~~~~
+      |                                                                        |
+      |                                                                        uint8_t * {aka unsigned char *}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:689:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  689 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
+      |                                                               ~~~~~~~~~~^~~~~~~~~~
+../Core/Src/main.c: In function 'RxFifo0MsgPendingCallback':
+../Core/Src/main.c:112:21: warning: passing argument 1 of 'can_recive' from incompatible pointer type [-Wincompatible-pointer-types]
+  112 |          can_recive(&RXID, &RXDLC, RX_data, 0);
+      |                     ^~~~~
+      |                     |
+      |                     uint32_t * {aka long unsigned int *}
+../Core/Src/main.c:58:35: note: expected 'uint16_t *' {aka 'short unsigned int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   58 |         void can_recive(uint16_t* ID , uint8_t* DLC , uint8_t* data , uint8_t fifo){
+      |                         ~~~~~~~~~~^~
+../Core/Src/main.c:112:28: warning: passing argument 2 of 'can_recive' from incompatible pointer type [-Wincompatible-pointer-types]
+  112 |          can_recive(&RXID, &RXDLC, RX_data, 0);
+      |                            ^~~~~~
+      |                            |
+      |                            uint32_t * {aka long unsigned int *}
+../Core/Src/main.c:58:49: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   58 |         void can_recive(uint16_t* ID , uint8_t* DLC , uint8_t* data , uint8_t fifo){
+      |                                        ~~~~~~~~~^~~
+../Core/Src/main.c:112:36: warning: passing argument 3 of 'can_recive' from incompatible pointer type [-Wincompatible-pointer-types]
+  112 |          can_recive(&RXID, &RXDLC, RX_data, 0);
+      |                                    ^~~~~~~
+      |                                    |
+      |                                    uint16_t * {aka short unsigned int *}
+../Core/Src/main.c:58:64: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+   58 |         void can_recive(uint16_t* ID , uint8_t* DLC , uint8_t* data , uint8_t fifo){
+      |                                                       ~~~~~~~~~^~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:206:40: warning: passing argument 3 of 'can_send' from incompatible pointer type [-Wincompatible-pointer-types]
+  206 |                      can_send(0x3f, 1, TX_data, &mailboxused);
+      |                                        ^~~~~~~
+      |                                        |
+      |                                        uint16_t * {aka short unsigned int *}
+../Core/Src/main.c:41:61: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+   41 |         void can_send (uint16_t ID , uint8_t DLC , uint8_t* DATA , uint8_t* pTxMailbox){
+      |                                                    ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "can_test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\01226\Desktop\motor_bldc\can_test\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="can_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: can_test.elf
+ 
+arm-none-eabi-size  can_test.elf 
+arm-none-eabi-objdump -h -S can_test.elf  > "can_test.list"
+   text	   data	    bss	    dec	    hex	filename
+   7380	     24	   1656	   9060	   2364	can_test.elf
+Finished building: default.size.stdout
+ 
+Finished building: can_test.list
+ 
+12:15:17 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-size  can_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7380	     24	   1656	   9060	   2364	can_test.elf
+Finished building: default.size.stdout
+ 
+12:28:46 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'can_send':
+../Core/Src/main.c:53:65: warning: passing argument 3 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   53 |                         HAL_CAN_AddTxMessage(&hcan , &THeader , DATA , &mailbox);
+      |                                                                 ^~~~
+      |                                                                 |
+      |                                                                 uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:689:54: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  689 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
+      |                                        ~~~~~~~~~~~~~~^~~~~~~
+../Core/Src/main.c:53:72: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   53 |                         HAL_CAN_AddTxMessage(&hcan , &THeader , DATA , &mailbox);
+      |                                                                        ^~~~~~~~
+      |                                                                        |
+      |                                                                        uint8_t * {aka unsigned char *}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:689:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  689 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
+      |                                                               ~~~~~~~~~~^~~~~~~~~~
+arm-none-eabi-gcc -o "can_test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\01226\Desktop\motor_bldc\can_test\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="can_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: can_test.elf
+ 
+arm-none-eabi-size  can_test.elf 
+arm-none-eabi-objdump -h -S can_test.elf  > "can_test.list"
+   text	   data	    bss	    dec	    hex	filename
+   7344	     24	   1656	   9024	   2340	can_test.elf
+Finished building: default.size.stdout
+ 
+Finished building: can_test.list
+ 
+12:28:48 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7944	     20	   1612	   9576	   2568	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+12:31:52 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-gcc -o "can_test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\01226\Desktop\motor_bldc\can_test\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="can_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: can_test.elf
+ 
+arm-none-eabi-size  can_test.elf 
+arm-none-eabi-objdump -h -S can_test.elf  > "can_test.list"
+   text	   data	    bss	    dec	    hex	filename
+   7344	     24	   1656	   9024	   2340	can_test.elf
+Finished building: default.size.stdout
+ 
+Finished building: can_test.list
+ 
+12:31:53 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_CAN_RxFifo0MsgPendingCallback':
+../Core/Src/main.c:87:30: warning: passing argument 1 of 'HAL_CAN_GetRxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   87 |         HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxHeader, RxData);
+      |                              ^~~~~
+      |                              |
+      |                              CAN_HandleTypeDef **
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:694:59: note: expected 'CAN_HandleTypeDef *' but argument is of type 'CAN_HandleTypeDef **'
+  694 | HAL_StatusTypeDef HAL_CAN_GetRxMessage(CAN_HandleTypeDef *hcan, uint32_t RxFifo,
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/main.c:87:64: warning: passing argument 4 of 'HAL_CAN_GetRxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   87 |         HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxHeader, RxData);
+      |                                                                ^~~~~~
+      |                                                                |
+      |                                                                uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:695:78: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  695 |                                        CAN_RxHeaderTypeDef *pHeader, uint8_t aData[]);
+      |                                                                      ~~~~~~~~^~~~~~~
+arm-none-eabi-gcc -o "canreceivebyfofa.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Repos\master embededd diploma\unit2\lesson_4_arrays\ex_3-1\canreceivebyfofa\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="canreceivebyfofa.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: canreceivebyfofa.elf
+ 
+arm-none-eabi-size  canreceivebyfofa.elf 
+arm-none-eabi-objdump -h -S canreceivebyfofa.elf  > "canreceivebyfofa.list"
+   text	   data	    bss	    dec	    hex	filename
+   7944	     20	   1612	   9576	   2568	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+Finished building: canreceivebyfofa.list
+ 
+12:33:06 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-size  can_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7344	     24	   1656	   9024	   2340	can_test.elf
+Finished building: default.size.stdout
+ 
+12:33:06 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_CAN_RxFifo0MsgPendingCallback':
+../Core/Src/main.c:87:30: warning: passing argument 1 of 'HAL_CAN_GetRxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   87 |         HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxHeader, RxData);
+      |                              ^~~~~
+      |                              |
+      |                              CAN_HandleTypeDef **
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:694:59: note: expected 'CAN_HandleTypeDef *' but argument is of type 'CAN_HandleTypeDef **'
+  694 | HAL_StatusTypeDef HAL_CAN_GetRxMessage(CAN_HandleTypeDef *hcan, uint32_t RxFifo,
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/main.c:87:64: warning: passing argument 4 of 'HAL_CAN_GetRxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   87 |         HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxHeader, RxData);
+      |                                                                ^~~~~~
+      |                                                                |
+      |                                                                uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:695:78: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  695 |                                        CAN_RxHeaderTypeDef *pHeader, uint8_t aData[]);
+      |                                                                      ~~~~~~~~^~~~~~~
+arm-none-eabi-gcc -o "canreceivebyfofa.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Repos\master embededd diploma\unit2\lesson_4_arrays\ex_3-1\canreceivebyfofa\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="canreceivebyfofa.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: canreceivebyfofa.elf
+ 
+arm-none-eabi-size  canreceivebyfofa.elf 
+arm-none-eabi-objdump -h -S canreceivebyfofa.elf  > "canreceivebyfofa.list"
+   text	   data	    bss	    dec	    hex	filename
+   7944	     20	   1612	   9576	   2568	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+Finished building: canreceivebyfofa.list
+ 
+12:33:12 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-size  can_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7344	     24	   1656	   9024	   2340	can_test.elf
+Finished building: default.size.stdout
+ 
+12:34:28 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-size  can_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7344	     24	   1656	   9024	   2340	can_test.elf
+Finished building: default.size.stdout
+ 
+12:34:28 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7944	     20	   1612	   9576	   2568	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+12:34:36 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7944	     20	   1612	   9576	   2568	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+13:04:02 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7944	     20	   1612	   9576	   2568	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+13:05:43 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-size  can_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7344	     24	   1656	   9024	   2340	can_test.elf
+Finished building: default.size.stdout
+ 
+13:05:44 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "canreceivebyfofa.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Repos\master embededd diploma\unit2\lesson_4_arrays\ex_3-1\canreceivebyfofa\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="canreceivebyfofa.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: canreceivebyfofa.elf
+ 
+arm-none-eabi-size  canreceivebyfofa.elf 
+arm-none-eabi-objdump -h -S canreceivebyfofa.elf  > "canreceivebyfofa.list"
+   text	   data	    bss	    dec	    hex	filename
+   7204	     20	   1612	   8836	   2284	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+Finished building: canreceivebyfofa.list
+ 
+13:16:06 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-size  can_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7344	     24	   1656	   9024	   2340	can_test.elf
+Finished building: default.size.stdout
+ 
+13:16:06 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:147:66: warning: passing argument 4 of 'HAL_CAN_GetRxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+  147 |           HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxHeader, RxData);
+      |                                                                  ^~~~~~
+      |                                                                  |
+      |                                                                  uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:695:78: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  695 |                                        CAN_RxHeaderTypeDef *pHeader, uint8_t aData[]);
+      |                                                                      ~~~~~~~~^~~~~~~
+arm-none-eabi-gcc -o "canreceivebyfofa.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Repos\master embededd diploma\unit2\lesson_4_arrays\ex_3-1\canreceivebyfofa\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="canreceivebyfofa.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: canreceivebyfofa.elf
+ 
+arm-none-eabi-size  canreceivebyfofa.elf 
+arm-none-eabi-objdump -h -S canreceivebyfofa.elf  > "canreceivebyfofa.list"
+   text	   data	    bss	    dec	    hex	filename
+   7956	     20	   1644	   9620	   2594	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+Finished building: canreceivebyfofa.list
+ 
+13:17:36 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7956	     20	   1644	   9620	   2594	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+13:18:41 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-size  can_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7344	     24	   1656	   9024	   2340	can_test.elf
+Finished building: default.size.stdout
+ 
+13:18:41 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:147:66: warning: passing argument 4 of 'HAL_CAN_GetRxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+  147 |           HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxHeader, RxData);
+      |                                                                  ^~~~~~
+      |                                                                  |
+      |                                                                  uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:695:78: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  695 |                                        CAN_RxHeaderTypeDef *pHeader, uint8_t aData[]);
+      |                                                                      ~~~~~~~~^~~~~~~
+arm-none-eabi-gcc -o "canreceivebyfofa.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Repos\master embededd diploma\unit2\lesson_4_arrays\ex_3-1\canreceivebyfofa\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="canreceivebyfofa.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: canreceivebyfofa.elf
+ 
+arm-none-eabi-size  canreceivebyfofa.elf 
+arm-none-eabi-objdump -h -S canreceivebyfofa.elf  > "canreceivebyfofa.list"
+   text	   data	    bss	    dec	    hex	filename
+   7956	     20	   1644	   9620	   2594	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+Finished building: canreceivebyfofa.list
+ 
+13:18:49 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7956	     20	   1644	   9620	   2594	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+13:27:17 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-size  can_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7344	     24	   1656	   9024	   2340	can_test.elf
+Finished building: default.size.stdout
+ 
+13:27:45 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-size  can_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7344	     24	   1656	   9024	   2340	can_test.elf
+Finished building: default.size.stdout
+ 
+13:27:55 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-size  can_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7344	     24	   1656	   9024	   2340	can_test.elf
+Finished building: default.size.stdout
+ 
+13:28:08 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-size  can_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7344	     24	   1656	   9024	   2340	can_test.elf
+Finished building: default.size.stdout
+ 
+13:30:23 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7956	     20	   1644	   9620	   2594	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+13:31:04 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'can_send':
+../Core/Src/main.c:53:65: warning: passing argument 3 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   53 |                         HAL_CAN_AddTxMessage(&hcan , &THeader , DATA , &pTxMailbox);
+      |                                                                 ^~~~
+      |                                                                 |
+      |                                                                 uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:689:54: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  689 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
+      |                                        ~~~~~~~~~~~~~~^~~~~~~
+../Core/Src/main.c:53:72: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   53 |                         HAL_CAN_AddTxMessage(&hcan , &THeader , DATA , &pTxMailbox);
+      |                                                                        ^~~~~~~~~~~
+      |                                                                        |
+      |                                                                        uint8_t ** {aka unsigned char **}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:689:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t **' {aka 'unsigned char **'}
+  689 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
+      |                                                               ~~~~~~~~~~^~~~~~~~~~
+arm-none-eabi-gcc -o "can_test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\01226\Desktop\motor_bldc\can_test\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="can_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: can_test.elf
+ 
+arm-none-eabi-size  can_test.elf 
+arm-none-eabi-objdump -h -S can_test.elf  > "can_test.list"
+   text	   data	    bss	    dec	    hex	filename
+   7332	     24	   1656	   9012	   2334	can_test.elf
+Finished building: default.size.stdout
+ 
+Finished building: can_test.list
+ 
+13:40:15 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'can_send':
+../Core/Src/main.c:57:65: warning: passing argument 2 of 'HAL_CAN_IsTxMessagePending' makes integer from pointer without a cast [-Wint-conversion]
+   57 |                         while(HAL_CAN_IsTxMessagePending(&hcan, pTxMailbox));
+      |                                                                 ^~~~~~~~~~
+      |                                                                 |
+      |                                                                 uint8_t * {aka unsigned char *}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:692:77: note: expected 'uint32_t' {aka 'long unsigned int'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  692 | uint32_t HAL_CAN_IsTxMessagePending(const CAN_HandleTypeDef *hcan, uint32_t TxMailboxes);
+      |                                                                    ~~~~~~~~~^~~~~~~~~~~
+../Core/Src/main.c:58:64: warning: passing argument 3 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   58 |                         HAL_CAN_AddTxMessage(&hcan , &THeader ,(uint32_t*) DATA , &pTxMailbox);
+      |                                                                ^~~~~~~~~~~~~~~~
+      |                                                                |
+      |                                                                uint32_t * {aka long unsigned int *}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:689:54: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  689 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
+      |                                        ~~~~~~~~~~~~~~^~~~~~~
+../Core/Src/main.c:58:83: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   58 |                         HAL_CAN_AddTxMessage(&hcan , &THeader ,(uint32_t*) DATA , &pTxMailbox);
+      |                                                                                   ^~~~~~~~~~~
+      |                                                                                   |
+      |                                                                                   uint8_t ** {aka unsigned char **}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:689:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t **' {aka 'unsigned char **'}
+  689 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
+      |                                                               ~~~~~~~~~~^~~~~~~~~~
+arm-none-eabi-gcc -o "can_test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\01226\Desktop\motor_bldc\can_test\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="can_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: can_test.elf
+ 
+arm-none-eabi-size  can_test.elf 
+arm-none-eabi-objdump -h -S can_test.elf  > "can_test.list"
+   text	   data	    bss	    dec	    hex	filename
+   7412	     24	   1640	   9076	   2374	can_test.elf
+Finished building: default.size.stdout
+ 
+Finished building: can_test.list
+ 
+13:40:20 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-size  can_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7412	     24	   1640	   9076	   2374	can_test.elf
+Finished building: default.size.stdout
+ 
+13:40:25 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'can_send':
+../Core/Src/main.c:57:65: warning: passing argument 2 of 'HAL_CAN_IsTxMessagePending' makes integer from pointer without a cast [-Wint-conversion]
+   57 |                         while(HAL_CAN_IsTxMessagePending(&hcan, &pTxMailbox));
+      |                                                                 ^~~~~~~~~~~
+      |                                                                 |
+      |                                                                 uint8_t ** {aka unsigned char **}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:692:77: note: expected 'uint32_t' {aka 'long unsigned int'} but argument is of type 'uint8_t **' {aka 'unsigned char **'}
+  692 | uint32_t HAL_CAN_IsTxMessagePending(const CAN_HandleTypeDef *hcan, uint32_t TxMailboxes);
+      |                                                                    ~~~~~~~~~^~~~~~~~~~~
+../Core/Src/main.c:58:64: warning: passing argument 3 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   58 |                         HAL_CAN_AddTxMessage(&hcan , &THeader ,(uint32_t*) DATA , &pTxMailbox);
+      |                                                                ^~~~~~~~~~~~~~~~
+      |                                                                |
+      |                                                                uint32_t * {aka long unsigned int *}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:689:54: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  689 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
+      |                                        ~~~~~~~~~~~~~~^~~~~~~
+../Core/Src/main.c:58:83: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   58 |                         HAL_CAN_AddTxMessage(&hcan , &THeader ,(uint32_t*) DATA , &pTxMailbox);
+      |                                                                                   ^~~~~~~~~~~
+      |                                                                                   |
+      |                                                                                   uint8_t ** {aka unsigned char **}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:689:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t **' {aka 'unsigned char **'}
+  689 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
+      |                                                               ~~~~~~~~~~^~~~~~~~~~
+arm-none-eabi-gcc -o "can_test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\01226\Desktop\motor_bldc\can_test\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="can_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: can_test.elf
+ 
+arm-none-eabi-size  can_test.elf 
+arm-none-eabi-objdump -h -S can_test.elf  > "can_test.list"
+   text	   data	    bss	    dec	    hex	filename
+   7412	     24	   1640	   9076	   2374	can_test.elf
+Finished building: default.size.stdout
+ 
+Finished building: can_test.list
+ 
+13:40:28 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-size  can_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7412	     24	   1640	   9076	   2374	can_test.elf
+Finished building: default.size.stdout
+ 
+13:40:43 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'can_send':
+../Core/Src/main.c:57:65: warning: passing argument 2 of 'HAL_CAN_IsTxMessagePending' makes integer from pointer without a cast [-Wint-conversion]
+   57 |                         while(HAL_CAN_IsTxMessagePending(&hcan, &pTxMailbox));
+      |                                                                 ^~~~~~~~~~~
+      |                                                                 |
+      |                                                                 uint8_t ** {aka unsigned char **}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:692:77: note: expected 'uint32_t' {aka 'long unsigned int'} but argument is of type 'uint8_t **' {aka 'unsigned char **'}
+  692 | uint32_t HAL_CAN_IsTxMessagePending(const CAN_HandleTypeDef *hcan, uint32_t TxMailboxes);
+      |                                                                    ~~~~~~~~~^~~~~~~~~~~
+../Core/Src/main.c:58:64: warning: passing argument 3 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   58 |                         HAL_CAN_AddTxMessage(&hcan , &THeader ,(uint32_t*) DATA , &pTxMailbox);
+      |                                                                ^~~~~~~~~~~~~~~~
+      |                                                                |
+      |                                                                uint32_t * {aka long unsigned int *}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:689:54: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  689 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
+      |                                        ~~~~~~~~~~~~~~^~~~~~~
+../Core/Src/main.c:58:83: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   58 |                         HAL_CAN_AddTxMessage(&hcan , &THeader ,(uint32_t*) DATA , &pTxMailbox);
+      |                                                                                   ^~~~~~~~~~~
+      |                                                                                   |
+      |                                                                                   uint8_t ** {aka unsigned char **}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:689:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t **' {aka 'unsigned char **'}
+  689 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
+      |                                                               ~~~~~~~~~~^~~~~~~~~~
+arm-none-eabi-gcc -o "can_test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\01226\Desktop\motor_bldc\can_test\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="can_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: can_test.elf
+ 
+arm-none-eabi-size  can_test.elf 
+arm-none-eabi-objdump -h -S can_test.elf  > "can_test.list"
+   text	   data	    bss	    dec	    hex	filename
+   7400	     20	   1636	   9056	   2360	can_test.elf
+Finished building: default.size.stdout
+ 
+Finished building: can_test.list
+ 
+13:41:27 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-size  can_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7400	     20	   1636	   9056	   2360	can_test.elf
+Finished building: default.size.stdout
+ 
+13:41:45 **** Incremental Build of configuration Debug for project can_test ****
+make -j16 all 
+arm-none-eabi-size  can_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7400	     20	   1636	   9056	   2360	can_test.elf
+Finished building: default.size.stdout
+ 
+13:48:57 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_CAN_RxFifo0MsgPendingCallback':
+../Core/Src/main.c:87:30: warning: passing argument 1 of 'HAL_CAN_GetRxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   87 |         HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxHeader, RxData);
+      |                              ^~~~~
+      |                              |
+      |                              CAN_HandleTypeDef **
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:694:59: note: expected 'CAN_HandleTypeDef *' but argument is of type 'CAN_HandleTypeDef **'
+  694 | HAL_StatusTypeDef HAL_CAN_GetRxMessage(CAN_HandleTypeDef *hcan, uint32_t RxFifo,
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/main.c:87:64: warning: passing argument 4 of 'HAL_CAN_GetRxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   87 |         HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxHeader, RxData);
+      |                                                                ^~~~~~
+      |                                                                |
+      |                                                                uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:695:78: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  695 |                                        CAN_RxHeaderTypeDef *pHeader, uint8_t aData[]);
+      |                                                                      ~~~~~~~~^~~~~~~
+arm-none-eabi-gcc -o "canreceivebyfofa.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Repos\master embededd diploma\unit2\lesson_4_arrays\ex_3-1\canreceivebyfofa\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="canreceivebyfofa.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: canreceivebyfofa.elf
+ 
+arm-none-eabi-size  canreceivebyfofa.elf 
+arm-none-eabi-objdump -h -S canreceivebyfofa.elf  > "canreceivebyfofa.list"
+   text	   data	    bss	    dec	    hex	filename
+   8048	     20	   1612	   9680	   25d0	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+Finished building: canreceivebyfofa.list
+ 
+13:49:19 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8048	     20	   1612	   9680	   25d0	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+13:51:04 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8048	     20	   1612	   9680	   25d0	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+13:54:27 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_CAN_RxFifo0MsgPendingCallback':
+../Core/Src/main.c:86:30: warning: passing argument 1 of 'HAL_CAN_GetRxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   86 |         HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxHeader, RxData);
+      |                              ^~~~~
+      |                              |
+      |                              CAN_HandleTypeDef **
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:694:59: note: expected 'CAN_HandleTypeDef *' but argument is of type 'CAN_HandleTypeDef **'
+  694 | HAL_StatusTypeDef HAL_CAN_GetRxMessage(CAN_HandleTypeDef *hcan, uint32_t RxFifo,
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/main.c:86:64: warning: passing argument 4 of 'HAL_CAN_GetRxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   86 |         HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxHeader, RxData);
+      |                                                                ^~~~~~
+      |                                                                |
+      |                                                                uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:695:78: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  695 |                                        CAN_RxHeaderTypeDef *pHeader, uint8_t aData[]);
+      |                                                                      ~~~~~~~~^~~~~~~
+arm-none-eabi-gcc -o "canreceivebyfofa.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Repos\master embededd diploma\unit2\lesson_4_arrays\ex_3-1\canreceivebyfofa\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="canreceivebyfofa.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: canreceivebyfofa.elf
+ 
+arm-none-eabi-size  canreceivebyfofa.elf 
+arm-none-eabi-objdump -h -S canreceivebyfofa.elf  > "canreceivebyfofa.list"
+   text	   data	    bss	    dec	    hex	filename
+   8056	     20	   1644	   9720	   25f8	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+Finished building: canreceivebyfofa.list
+ 
+13:55:14 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8056	     20	   1644	   9720	   25f8	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+13:55:29 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8056	     20	   1644	   9720	   25f8	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+13:55:48 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8056	     20	   1644	   9720	   25f8	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+13:56:17 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8056	     20	   1644	   9720	   25f8	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+13:57:23 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_CAN_RxFifo0MsgPendingCallback':
+../Core/Src/main.c:86:30: warning: passing argument 1 of 'HAL_CAN_GetRxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   86 |         HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxHeader, RxData);
+      |                              ^~~~~
+      |                              |
+      |                              CAN_HandleTypeDef **
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:694:59: note: expected 'CAN_HandleTypeDef *' but argument is of type 'CAN_HandleTypeDef **'
+  694 | HAL_StatusTypeDef HAL_CAN_GetRxMessage(CAN_HandleTypeDef *hcan, uint32_t RxFifo,
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/main.c:86:64: warning: passing argument 4 of 'HAL_CAN_GetRxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   86 |         HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxHeader, RxData);
+      |                                                                ^~~~~~
+      |                                                                |
+      |                                                                uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:695:78: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  695 |                                        CAN_RxHeaderTypeDef *pHeader, uint8_t aData[]);
+      |                                                                      ~~~~~~~~^~~~~~~
+arm-none-eabi-gcc -o "canreceivebyfofa.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Repos\master embededd diploma\unit2\lesson_4_arrays\ex_3-1\canreceivebyfofa\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="canreceivebyfofa.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: canreceivebyfofa.elf
+ 
+arm-none-eabi-size  canreceivebyfofa.elf 
+arm-none-eabi-objdump -h -S canreceivebyfofa.elf  > "canreceivebyfofa.list"
+   text	   data	    bss	    dec	    hex	filename
+   8056	     20	   1644	   9720	   25f8	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+Finished building: canreceivebyfofa.list
+ 
+13:57:32 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8056	     20	   1644	   9720	   25f8	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+13:59:25 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_CAN_RxFifo0MsgPendingCallback':
+../Core/Src/main.c:86:30: warning: passing argument 1 of 'HAL_CAN_GetRxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   86 |         HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxHeader, RxData);
+      |                              ^~~~~
+      |                              |
+      |                              CAN_HandleTypeDef **
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:694:59: note: expected 'CAN_HandleTypeDef *' but argument is of type 'CAN_HandleTypeDef **'
+  694 | HAL_StatusTypeDef HAL_CAN_GetRxMessage(CAN_HandleTypeDef *hcan, uint32_t RxFifo,
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "canreceivebyfofa.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Repos\master embededd diploma\unit2\lesson_4_arrays\ex_3-1\canreceivebyfofa\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="canreceivebyfofa.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: canreceivebyfofa.elf
+ 
+arm-none-eabi-size  canreceivebyfofa.elf 
+arm-none-eabi-objdump -h -S canreceivebyfofa.elf  > "canreceivebyfofa.list"
+   text	   data	    bss	    dec	    hex	filename
+   8056	     20	   1644	   9720	   25f8	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+Finished building: canreceivebyfofa.list
+ 
+13:59:37 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8056	     20	   1644	   9720	   25f8	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+14:00:07 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8056	     20	   1644	   9720	   25f8	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+14:35:59 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8056	     20	   1644	   9720	   25f8	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+14:36:31 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8056	     20	   1644	   9720	   25f8	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+14:38:03 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8056	     20	   1644	   9720	   25f8	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+14:41:59 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_CAN_RxFifo0MsgPendingCallback':
+../Core/Src/main.c:67:30: warning: passing argument 1 of 'HAL_CAN_GetRxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
+   67 |         HAL_CAN_GetRxMessage(&hcan,CAN_FILTER_FIFO0,&RxHeader, RxData);
+      |                              ^~~~~
+      |                              |
+      |                              CAN_HandleTypeDef **
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:258,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h:694:59: note: expected 'CAN_HandleTypeDef *' but argument is of type 'CAN_HandleTypeDef **'
+  694 | HAL_StatusTypeDef HAL_CAN_GetRxMessage(CAN_HandleTypeDef *hcan, uint32_t RxFifo,
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "canreceivebyfofa.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Repos\master embededd diploma\unit2\lesson_4_arrays\ex_3-1\canreceivebyfofa\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="canreceivebyfofa.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: canreceivebyfofa.elf
+ 
+arm-none-eabi-size  canreceivebyfofa.elf 
+arm-none-eabi-objdump -h -S canreceivebyfofa.elf  > "canreceivebyfofa.list"
+   text	   data	    bss	    dec	    hex	filename
+   8056	     20	   1644	   9720	   25f8	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 
+Finished building: canreceivebyfofa.list
+ 
+14:43:58 **** Incremental Build of configuration Debug for project canreceivebyfofa ****
+make -j16 all 
+arm-none-eabi-size  canreceivebyfofa.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8056	     20	   1644	   9720	   25f8	canreceivebyfofa.elf
+Finished building: default.size.stdout
+ 

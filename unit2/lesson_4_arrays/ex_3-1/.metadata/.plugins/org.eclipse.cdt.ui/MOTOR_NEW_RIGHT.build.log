@@ -1,0 +1,33 @@
+12:41:32 **** Incremental Build of configuration Debug for project MOTOR_NEW_RIGHT ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'speed_cal':
+../Core/Src/main.c:396:16: error: 'current_sec' undeclared (first use in this function); did you mean 'current_sens'?
+  396 |                current_sec = sTime.Seconds;
+      |                ^~~~~~~~~~~
+      |                current_sens
+../Core/Src/main.c:396:16: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:397:16: error: 'secounds' undeclared (first use in this function); did you mean 'seconds'?
+  397 |                secounds;
+      |                ^~~~~~~~
+      |                seconds
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:451:1: warning: statement with no effect [-Wunused-value]
+  451 | 1
+      | ^
+../Core/Src/main.c:451:2: error: expected ';' before 'else'
+  451 | 1
+      |  ^
+      |  ;
+......
+  454 |         else if (GPIO_Pin == GPIO_PIN_14)
+      |         ~~~~
+../Core/Src/main.c: In function 'RxFifo0MsgPendingCallback':
+../Core/Src/main.c:465:2: warning: implicit declaration of function 'can_rx' [-Wimplicit-function-declaration]
+  465 |  can_rx(&RXID, &RXDLC, RX_data, 0);
+      |  ^~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+12:41:33 Build Failed. 4 errors, 2 warnings. (took 615ms)
+
