@@ -1,0 +1,24 @@
+/*
+ * ex6.c
+ *
+ *  Created on: Oct 15, 2024
+ *      Author: 01226
+ */
+
+#include <stdio.h>
+
+int main() {
+    float a,b,temp=0;
+    printf("enter two numbers");
+
+    scanf("%f %f",&a,&b);
+    temp=a;
+    a=b;
+    b=temp;
+
+    printf("the numbers are:%f%f",a,b);
+
+
+    return 0;
+}
+

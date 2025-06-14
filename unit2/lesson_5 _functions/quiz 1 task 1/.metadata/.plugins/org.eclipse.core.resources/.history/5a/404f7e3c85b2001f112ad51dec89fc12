@@ -1,0 +1,51 @@
+/*
+ * main.c
+ *
+ *  Created on: Dec 4, 2024
+ *      Author: 01226
+ */
+#include <stdio.h>
+
+int repet(int a, int x[10])
+{
+    for (int i = 0; i < 10; i++)
+    {
+        if (x[i] == a)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int main() {
+    int arr[10];
+    for (int i = 0; i < 10; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        fflush(stdout);
+        scanf("%d", &arr[i]);
+    }
+
+    int num;
+    printf("Enter the number to search for: ");
+    fflush(stdout);
+    scanf("%d", &num);
+
+    int result = repet(num, arr);
+
+    if (result != -1)
+    {
+        printf("The number %d is found at index %d.\n", num, result);
+        fflush(stdout);
+
+    } else
+    {
+        printf("The number %d is not found in the array.\n", num);
+        fflush(stdout);
+
+    }
+
+    return 0;
+}
+

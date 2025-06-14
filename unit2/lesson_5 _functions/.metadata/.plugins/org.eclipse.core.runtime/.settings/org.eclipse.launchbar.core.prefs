@@ -1,0 +1,10 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:hw1-functions Debug (1),org.eclipse.launchbar.core.descriptorType.default\:hw1-functions Debug,org.eclipse.launchbar.core.descriptorType.default\:hw1.exe,org.eclipse.launchbar.core.descriptorType.default\:hw1.exe (1),org.eclipse.launchbar.core.descriptorType.default\:hm1_functions.exe,org.eclipse.launchbar.core.descriptorType.default\:hm2_functions.exe,org.eclipse.launchbar.core.descriptorType.default\:hm3_functions Debug,org.eclipse.launchbar.core.descriptorType.default\:hm4_functions Debug
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:hm1_functions.exe/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:hw1-functions\ Debug\ (1)/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:hw1-functions\ Debug\ (1)/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:hw1-functions\ Debug/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:hw1-functions\ Debug/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

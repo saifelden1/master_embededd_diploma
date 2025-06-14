@@ -1,0 +1,27 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 30, 2024
+ *      Author: 01226
+ */
+#include <stdio.h>
+
+int main(){
+	int x=0;
+
+	str[100];
+	printf("enter a string:");
+	fflush(stdout);
+	gets(str);
+
+
+	for(int i=0 ; i>0 ; i++){
+		if( str[i] != 0)
+		x++;
+		else
+		break;
+	}
+	printf("length equals %d",x);
+	return 0;
+}
+

@@ -1,0 +1,41 @@
+/*
+ * main.c
+ *
+ *  Created on: Dec 9, 2024
+ *      Author: 01226
+ */
+
+#include<stdio.h>
+int count=0;
+int decimalToBinary(int num) {
+
+    if (num <= 0) {
+        return 0 ;
+    }
+
+    decimalToBinary(num / 2);  // Recursive call
+
+	if(num % 2 ==1)
+		count++;
+
+	return count;
+}
+
+int main() {
+    int number;
+    int count =0;
+
+    printf("Enter a decimal number: ");
+    fflush(stdout);
+    scanf("%d", &number);
+
+  //  printf("Binary representation: ");
+    count = decimalToBinary(number);  // Call the conversion function
+    printf("count is %d ",count);
+    fflush(stdout);
+
+
+    return 0;
+}
+
+

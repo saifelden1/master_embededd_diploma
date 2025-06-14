@@ -1,0 +1,29 @@
+/*
+ * main.c
+ *
+ *  Created on: Dec 8, 2024
+ *      Author: 01226
+ */
+
+#include<stdio.h>
+
+int get_rem(int num){
+	int rem;
+	if(num>0)
+	{
+		rem = num % 10;
+		num += num / 10;
+		rem = rem + get_rem(num);
+	}
+	return rem;
+}
+int main(){
+	int number;
+	int result;
+	printf("enter the number ");
+	fflush(stdout);
+	scanf("%d",&number);
+	result = get_rem(number);
+	printf("enter the number %d",result);
+
+}

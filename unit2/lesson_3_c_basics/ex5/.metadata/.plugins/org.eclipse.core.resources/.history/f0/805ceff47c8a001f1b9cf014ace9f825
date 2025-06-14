@@ -1,0 +1,17 @@
+/*
+ * ex5.c
+ *
+ *  Created on: Oct 15, 2024
+ *      Author: 01226
+ */
+
+#include <stdio.h>
+
+int main(){
+	char a;
+	printf("enter a character: ");
+	scanf("%c",&a);
+	printf("ascii value of %c = %d",a,a);
+
+	return 0;
+}

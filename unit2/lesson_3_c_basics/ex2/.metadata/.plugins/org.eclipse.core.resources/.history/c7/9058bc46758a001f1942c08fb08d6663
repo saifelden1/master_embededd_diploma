@@ -1,0 +1,21 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 15, 2024
+ *      Author: 01226
+ */
+#include <stdio.h>
+
+int main(){
+	int x=0;
+	printf("Enter a integer: ");
+
+
+	scanf("%d",&x);
+
+
+	printf("you entered %d",x);
+
+
+	return 0;
+}

@@ -1,0 +1,29 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 26, 2024
+ *      Author: 01226
+ */
+
+#include<stdio.h>
+
+int main(){
+	int mat [100]={1,2,3,4,5,6,7};
+	int var;
+	int place;
+	int i;
+	printf("enter the variable: ");
+	scanf("%d",var);
+
+	printf("enter the place: ");
+	scanf("%d",place);
+
+	for( i=99 ; i>place ; i--){
+		mat[i+1] = mat[i];
+	}
+
+	for(i=0 ; i<place ; i++){
+		printf( "%d" , mat[i] );
+	}
+
+}

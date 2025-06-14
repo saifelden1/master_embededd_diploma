@@ -1,0 +1,12 @@
+/*
+ * hm4.c
+ *
+ *  Created on: Dec 1, 2024
+ *      Author: 01226
+ */
+int pwr(int base ,int exp){
+	if(exp != 0){
+		return bass*pwr(base,exp-1);
+	}
+}
+

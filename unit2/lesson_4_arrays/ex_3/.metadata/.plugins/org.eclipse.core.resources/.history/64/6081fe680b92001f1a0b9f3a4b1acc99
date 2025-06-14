@@ -1,0 +1,76 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 24, 2024
+ *      Author: 01226
+ */
+#include <stdio.h>
+#include <stdlib.h>
+
+int matrix_a[10][10];
+int matrix_b[10][10];
+int r ,c ,i ,j;
+int main(){
+
+	printf("enter the rows : ");
+	fflush(stdout);
+	scanf("%d",&r);
+
+	printf("enter the coulmna : ");
+	fflush(stdout);
+	scanf("%d",&c);
+
+//takng the first matrix
+	for( i=0 ; i<r ; i++ )
+	{
+
+		for ( j=0 ; j<c ; j++ )
+		{
+			printf("enter the element a%d%d",i+1,j+1);
+			fflush(stdout);
+			scanf("%d",&matrix_a[i][j]);
+		}
+
+	}
+
+//printing first matrix
+	printf("the entered matrix\n");
+		for( i=0 ; i<r ; i++ )
+		{
+			for ( j=0 ; j<c ; j++ )
+			{
+				printf( "%d" , matrix_b[i][j] );
+				fflush(stdout);
+
+				if(j==c-1)
+				printf("\n\n");
+			}
+		}
+
+//making transpose
+	for( i=0 ; i<r ; i++ )
+	{
+		for ( j=0 ; j<c ; j++ )
+		{
+			matrix_b[j][i]=matrix_a[i][j];
+		}
+	}
+
+
+//printing secound matrix
+	printf("the transposed matrix\n");
+
+	for( i=0 ; i<r ; i++ )
+	{
+		for ( j=0 ; j<c ; j++ )
+		{
+			printf( "%d" , matrix_b[i][j] );
+			fflush(stdout);
+
+			if(j==c-1)
+			printf("\n\n");
+		}
+	}
+	return 0;
+}
+

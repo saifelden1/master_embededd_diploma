@@ -1,0 +1,35 @@
+/*
+ * main.c
+ *
+ *  Created on: Dec 9, 2024
+ *      Author: 01226
+ */
+
+#include<stdio.h>
+
+int reverse(int num, int rev_num)
+{
+    if (num == 0) {
+        return rev_num;
+    }
+
+    rev_num = rev_num * 10 + (num % 10);
+    return reverse(num / 10, rev_num);
+}
+
+int main()
+{
+    int number;
+    int reverse_num = 0;
+
+    printf("Enter the number to be reversed: ");
+    fflush(stdout);
+    scanf("%d", &number);
+
+    reverse_num = reverse(number, reverse_num);
+
+    printf("Reversed number is %d\n", reverse_num);
+
+    return 0;
+}
+

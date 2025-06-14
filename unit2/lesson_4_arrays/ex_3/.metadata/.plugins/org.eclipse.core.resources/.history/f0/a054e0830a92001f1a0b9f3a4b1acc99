@@ -1,0 +1,29 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 24, 2024
+ *      Author: 01226
+ */
+#include <stdio.h>
+#include <stdlib.h>
+
+int matrix_a[10][10];
+int matrix_b[10][10];
+int r ,c ,i ,j;
+int main(){
+
+	printf("enter the rows : ");
+	fflush(stdout);
+	scanf("%d",r);
+
+	printf("enter the rows : ");
+	fflush(stdout);
+	scanf("%d",r);
+
+//takng the first matrix
+	for( i=0 ; i<r ; i++ )
+
+
+	return 0;
+}
+

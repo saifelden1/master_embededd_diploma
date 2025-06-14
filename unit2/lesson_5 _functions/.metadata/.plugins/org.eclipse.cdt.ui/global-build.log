@@ -1,0 +1,267 @@
+02:15:55 **** Incremental Build of configuration Debug for project hm3_functions ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o hm3.o "..\\hm3.c" 
+gcc -o hm3_functions.exe hm3.o 
+C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file hm3_functions.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+02:16:01 **** Incremental Build of configuration Debug for project hm3_functions ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o hm3.o "..\\hm3.c" 
+gcc -o hm3_functions.exe hm3.o 
+Info: Nothing to build for hm3_functions
+02:19:31 **** Rebuild of configuration Debug for project hm4_functions ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o hm4.o "..\\hm4.c" 
+..\hm4.c: In function 'pwr':
+..\hm4.c:9:24: error: 'bass' undeclared (first use in this function); did you mean 'base'?
+    9 |                 return bass*pwr(base,exp-1);
+      |                        ^~~~
+      |                        base
+..\hm4.c:9:24: note: each undeclared identifier is reported only once for each function it appears in
+..\hm4.c:11:1: warning: control reaches end of non-void function [-Wreturn-type]
+   11 | }
+      | ^
+02:19:41 **** Incremental Build of configuration Debug for project hm4_functions ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o hm4.o "..\\hm4.c" 
+..\hm4.c: In function 'pwr':
+..\hm4.c:11:1: warning: control reaches end of non-void function [-Wreturn-type]
+   11 | }
+      | ^
+gcc -o hm4_functions.exe hm4.o 
+C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/libmingw32.a(lib64_libmingw32_a-crtexewin.o):crtexewin.c:(.text+0x130): undefined reference to `WinMain'
+collect2.exe: error: ld returned 1 exit status
+02:20:26 **** Incremental Build of configuration Debug for project hm4_functions ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o hm4.o "..\\hm4.c" 
+..\hm4.c: In function 'main':
+..\hm4.c:14:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   14 |         printf("enter the base ")
+      |         ^~~~~~
+..\hm4.c:1:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+  +++ |+#include <stdio.h>
+    1 | /*
+..\hm4.c:14:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   14 |         printf("enter the base ")
+      |         ^~~~~~
+..\hm4.c:14:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\hm4.c:14:34: error: expected ';' before '}' token
+   14 |         printf("enter the base ")
+      |                                  ^
+      |                                  ;
+   15 | }
+      | ~                                 
+..\hm4.c: In function 'pwr':
+..\hm4.c:11:1: warning: control reaches end of non-void function [-Wreturn-type]
+   11 | }
+      | ^
+02:24:00 **** Incremental Build of configuration Debug for project hm4_functions ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o hm4.o "..\\hm4.c" 
+..\hm4.c: In function 'main':
+..\hm4.c:15:9: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'printf'
+   15 |         printf("enter the base ");
+      |         ^~~~~~
+..\hm4.c:16:9: warning: implicit declaration of function 'fflush' [-Wimplicit-function-declaration]
+   16 |         fflush(stdout);
+      |         ^~~~~~
+..\hm4.c:16:16: error: 'stdout' undeclared (first use in this function)
+   16 |         fflush(stdout);
+      |                ^~~~~~
+..\hm4.c:1:1: note: 'stdout' is defined in header '<stdio.h>'; did you forget to '#include <stdio.h>'?
+  +++ |+#include <stdio.h>
+    1 | /*
+..\hm4.c:16:16: note: each undeclared identifier is reported only once for each function it appears in
+   16 |         fflush(stdout);
+      |                ^~~~~~
+..\hm4.c:17:5: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]
+   17 |     scanf ("%d",&base);
+      |     ^~~~~
+..\hm4.c:17:5: note: include '<stdio.h>' or provide a declaration of 'scanf'
+..\hm4.c:17:5: warning: incompatible implicit declaration of built-in function 'scanf' [-Wbuiltin-declaration-mismatch]
+..\hm4.c:17:5: note: include '<stdio.h>' or provide a declaration of 'scanf'
+..\hm4.c:17:18: error: 'base' undeclared (first use in this function)
+   17 |     scanf ("%d",&base);
+      |                  ^~~~
+..\hm4.c:18:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   18 |         printf("enter the exp ");
+      |         ^~~~~~
+..\hm4.c:18:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\hm4.c:18:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+..\hm4.c:18:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\hm4.c:20:18: error: 'ex' undeclared (first use in this function); did you mean 'exp'?
+   20 |     scanf ("%d",&ex);
+      |                  ^~
+      |                  exp
+..\hm4.c:21:87: error: expected ';' before 'fflush'
+   21 |         printf("the number %d to the power %d is equals to %d",base,exp,pwr(base,exp))
+      |                                                                                       ^
+      |                                                                                       ;
+   22 |         fflush(stdout);
+      |         ~~~~~~                                                                         
+..\hm4.c: In function 'pwr':
+..\hm4.c:11:1: warning: control reaches end of non-void function [-Wreturn-type]
+   11 | }
+      | ^
+02:24:07 **** Incremental Build of configuration Debug for project hm4_functions ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o hm4.o "..\\hm4.c" 
+..\hm4.c: In function 'main':
+..\hm4.c:15:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   15 |         printf("enter the base ");
+      |         ^~~~~~
+..\hm4.c:1:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+  +++ |+#include <stdio.h>
+    1 | /*
+..\hm4.c:15:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   15 |         printf("enter the base ");
+      |         ^~~~~~
+..\hm4.c:15:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\hm4.c:16:9: warning: implicit declaration of function 'fflush' [-Wimplicit-function-declaration]
+   16 |         fflush(stdout);
+      |         ^~~~~~
+..\hm4.c:16:16: error: 'stdout' undeclared (first use in this function)
+   16 |         fflush(stdout);
+      |                ^~~~~~
+..\hm4.c:16:16: note: 'stdout' is defined in header '<stdio.h>'; did you forget to '#include <stdio.h>'?
+..\hm4.c:16:16: note: each undeclared identifier is reported only once for each function it appears in
+..\hm4.c:17:5: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]
+   17 |     scanf ("%d",&base);
+      |     ^~~~~
+..\hm4.c:17:5: note: include '<stdio.h>' or provide a declaration of 'scanf'
+..\hm4.c:17:5: warning: incompatible implicit declaration of built-in function 'scanf' [-Wbuiltin-declaration-mismatch]
+..\hm4.c:17:5: note: include '<stdio.h>' or provide a declaration of 'scanf'
+..\hm4.c:20:18: error: 'ex' undeclared (first use in this function); did you mean 'exp'?
+   20 |     scanf ("%d",&ex);
+      |                  ^~
+      |                  exp
+..\hm4.c:21:87: error: expected ';' before 'fflush'
+   21 |         printf("the number %d to the power %d is equals to %d",base,exp,pwr(base,exp))
+      |                                                                                       ^
+      |                                                                                       ;
+   22 |         fflush(stdout);
+      |         ~~~~~~                                                                         
+..\hm4.c: In function 'pwr':
+..\hm4.c:11:1: warning: control reaches end of non-void function [-Wreturn-type]
+   11 | }
+      | ^
+02:24:23 **** Incremental Build of configuration Debug for project hm4_functions ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o hm4.o "..\\hm4.c" 
+..\hm4.c: In function 'main':
+..\hm4.c:15:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   15 |         printf("enter the base ");
+      |         ^~~~~~
+..\hm4.c:1:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+  +++ |+#include <stdio.h>
+    1 | /*
+..\hm4.c:15:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   15 |         printf("enter the base ");
+      |         ^~~~~~
+..\hm4.c:15:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\hm4.c:16:9: warning: implicit declaration of function 'fflush' [-Wimplicit-function-declaration]
+   16 |         fflush(stdout);
+      |         ^~~~~~
+..\hm4.c:16:16: error: 'stdout' undeclared (first use in this function)
+   16 |         fflush(stdout);
+      |                ^~~~~~
+..\hm4.c:16:16: note: 'stdout' is defined in header '<stdio.h>'; did you forget to '#include <stdio.h>'?
+..\hm4.c:16:16: note: each undeclared identifier is reported only once for each function it appears in
+..\hm4.c:17:5: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]
+   17 |     scanf ("%d",&base);
+      |     ^~~~~
+..\hm4.c:17:5: note: include '<stdio.h>' or provide a declaration of 'scanf'
+..\hm4.c:17:5: warning: incompatible implicit declaration of built-in function 'scanf' [-Wbuiltin-declaration-mismatch]
+..\hm4.c:17:5: note: include '<stdio.h>' or provide a declaration of 'scanf'
+..\hm4.c:20:18: error: 'ex' undeclared (first use in this function); did you mean 'exp'?
+   20 |     scanf ("%d",&ex);
+      |                  ^~
+      |                  exp
+..\hm4.c:21:87: error: expected ';' before 'fflush'
+   21 |         printf("the number %d to the power %d is equals to %d",base,exp,pwr(base,exp))
+      |                                                                                       ^
+      |                                                                                       ;
+   22 |         fflush(stdout);
+      |         ~~~~~~                                                                         
+..\hm4.c: In function 'pwr':
+..\hm4.c:11:1: warning: control reaches end of non-void function [-Wreturn-type]
+   11 | }
+      | ^
+02:24:48 **** Incremental Build of configuration Debug for project hm4_functions ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o hm4.o "..\\hm4.c" 
+..\hm4.c: In function 'main':
+..\hm4.c:21:18: error: 'ex' undeclared (first use in this function); did you mean 'exp'?
+   21 |     scanf ("%d",&ex);
+      |                  ^~
+      |                  exp
+..\hm4.c:21:18: note: each undeclared identifier is reported only once for each function it appears in
+..\hm4.c:22:87: error: expected ';' before 'fflush'
+   22 |         printf("the number %d to the power %d is equals to %d",base,exp,pwr(base,exp))
+      |                                                                                       ^
+      |                                                                                       ;
+   23 |         fflush(stdout);
+      |         ~~~~~~                                                                         
+..\hm4.c: In function 'pwr':
+..\hm4.c:12:1: warning: control reaches end of non-void function [-Wreturn-type]
+   12 | }
+      | ^
+02:24:55 **** Incremental Build of configuration Debug for project hm4_functions ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o hm4.o "..\\hm4.c" 
+..\hm4.c: In function 'main':
+..\hm4.c:21:21: error: expected ')' before ';' token
+   21 |     scanf ("%d",&exp;
+      |           ~         ^
+      |                     )
+..\hm4.c:24:10: error: expected ';' before '}' token
+   24 | return 0;
+      |          ^
+      |          ;
+   25 | }
+      | ~         
+..\hm4.c: In function 'pwr':
+..\hm4.c:12:1: warning: control reaches end of non-void function [-Wreturn-type]
+   12 | }
+      | ^
+02:24:59 **** Incremental Build of configuration Debug for project hm4_functions ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o hm4.o "..\\hm4.c" 
+..\hm4.c: In function 'main':
+..\hm4.c:21:21: error: expected ')' before ';' token
+   21 |     scanf ("%d",&exp;
+      |           ~         ^
+      |                     )
+..\hm4.c:24:10: error: expected ';' before '}' token
+   24 | return 0;
+      |          ^
+      |          ;
+   25 | }
+      | ~         
+..\hm4.c: In function 'pwr':
+..\hm4.c:12:1: warning: control reaches end of non-void function [-Wreturn-type]
+   12 | }
+      | ^
+02:25:08 **** Incremental Build of configuration Debug for project hm4_functions ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o hm4.o "..\\hm4.c" 
+..\hm4.c: In function 'main':
+..\hm4.c:21:22: error: expected ';' before 'printf'
+   21 |     scanf ("%d",&exp)
+      |                      ^
+      |                      ;
+   22 |         printf("the number %d to the power %d is equals to %d",base,exp,pwr(base,exp));
+      |         ~~~~~~        
+..\hm4.c: In function 'pwr':
+..\hm4.c:12:1: warning: control reaches end of non-void function [-Wreturn-type]
+   12 | }
+      | ^
+02:25:12 **** Incremental Build of configuration Debug for project hm4_functions ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o hm4.o "..\\hm4.c" 
+..\hm4.c: In function 'pwr':
+..\hm4.c:12:1: warning: control reaches end of non-void function [-Wreturn-type]
+   12 | }
+      | ^
+gcc -o hm4_functions.exe hm4.o 
+Info: Nothing to build for hm4_functions

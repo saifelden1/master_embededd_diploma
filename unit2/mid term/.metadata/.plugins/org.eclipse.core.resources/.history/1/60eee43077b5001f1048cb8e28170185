@@ -1,0 +1,33 @@
+/*
+ * main.c
+ *
+ *  Created on: Dec 8, 2024
+ *      Author: 01226
+ */
+#include <stdio.h>
+#include <math.h>
+
+float SquareRoot(int number) {
+    if (number < 0) {
+        printf("Error: Negative input\n");
+        return -1;
+    } else {
+        return sqrt(number);
+    }
+}
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    float result = SquareRoot(num);
+
+    if (result != -1) {
+        printf("The square root of %d is %.2f\n", num, result);
+    }
+
+    return 0;
+}
+
+

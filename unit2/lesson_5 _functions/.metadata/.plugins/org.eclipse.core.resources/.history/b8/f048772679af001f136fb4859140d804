@@ -1,0 +1,27 @@
+/*
+ * hm3.c
+ *
+ *  Created on: Dec 1, 2024
+ *      Author: 01226
+ */
+#include<stdio.h>
+
+int revrse(){
+	char a;
+	scanf("%d",&a);
+	if(a!='/n')
+	{
+		revese();
+		printf("%c",a);
+	}return 0;
+}
+
+
+int main(){
+
+	printf("enter the sentence you want to revese ");
+	fflush(stdout);
+	revrse();
+
+	return 0;
+}

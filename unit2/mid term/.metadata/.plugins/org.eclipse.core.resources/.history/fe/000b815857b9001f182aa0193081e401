@@ -1,0 +1,45 @@
+/*
+ * main.c
+ *
+ *  Created on: Dec 9, 2024
+ *      Author: 01226
+ */
+
+#include <stdio.h>
+
+int maxOnesBetweenZeros(int n) {
+    int maxOnes = 0;
+    int currentOnes = 0;
+    int foundFirstZero = 0;
+
+    while (n > 0) {
+        if ((n & 1) == 0) {
+            if (foundFirstZero) {
+                if (currentOnes > maxOnes) {
+                    maxOnes = currentOnes;
+                }
+            }
+            currentOnes = 0;
+            foundFirstZero = 1;
+        } else if (foundFirstZero) {
+            currentOnes++;
+        }
+
+        n >>= 1;
+    }
+
+    return maxOnes;
+}
+
+int main() {
+    int input;
+
+    printf("Enter a number: ");
+    scanf("%d", &input);
+
+    printf("Input: %d, Output: %d\n", input, maxOnesBetweenZeros(input));
+
+    return 0;
+}
+
+

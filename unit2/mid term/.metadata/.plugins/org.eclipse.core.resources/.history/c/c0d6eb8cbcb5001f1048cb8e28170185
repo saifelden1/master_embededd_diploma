@@ -1,0 +1,47 @@
+/*
+ * main.c
+ *
+ *  Created on: Dec 9, 2024
+ *      Author: 01226
+ */
+
+#include<stdio.h>
+#include<math.h>
+
+
+int reverse(int num, int count)
+{
+	int rev_num=0;
+	int x;
+	int new_num;
+
+	x=num%10;
+	new_num =num/10;
+	rev_num=rev_num+(x*count);
+	count--;
+	reverse(new_num,count);
+	return rev_num;
+}
+int count (int number)
+{
+	int count = 0;
+		    while (number != 0)
+		    {
+		        number /= 10;
+		        count++;
+		    }
+		    return count;
+}
+int main()
+{
+	int number;
+	int counter;
+	int reverse_num;
+printf("enter the number to be reversed");
+fflush(stdout);
+scanf("%d",&number);
+
+counter = count(number);
+reverse_num = reverse(number,counter);
+}
+

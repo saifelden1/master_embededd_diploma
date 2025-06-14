@@ -1,0 +1,25 @@
+/*
+ * hm4.c
+ *
+ *  Created on: Dec 1, 2024
+ *      Author: 01226
+ */
+#include <stdio.h>
+int pwr(int base ,int exp){
+	if(exp != 0){
+		return base*pwr(base,exp-1);
+	}
+}
+
+int main(){
+	int exp,base;
+	printf("enter the base ");
+	fflush(stdout);
+    scanf ("%d",&base);
+	printf("enter the exp ");
+	fflush(stdout);
+    scanf ("%d",&exp;
+	printf("the number %d to the power %d is equals to %d",base,exp,pwr(base,exp))
+	fflush(stdout);
+return 0;
+}

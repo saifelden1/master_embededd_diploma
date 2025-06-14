@@ -1,0 +1,51 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 24, 2024
+ *      Author: 01226
+ */
+#include <stdio.h>
+
+int main(){
+
+	int n=0;
+	float sum =0;
+
+
+	printf("enter the number of elements \n");
+	fflush(stdout);
+	scanf("%d",&n);
+
+
+	float *arr = (float*) malloc ( n * sizeof(float) );
+
+	for(int i=0 ; i<n ; i++)
+
+	{
+		printf("enter the %d number \n",i);
+		fflush(stdout);
+		scanf("%.2f",&arr[i]);
+
+	}
+
+	for(int i=0 ; i<n ; i++)
+
+		{
+			sum+=arr[i];
+
+
+		}
+				printf("the avarge is %.2f \n",sum);
+				fflush(stdout);
+
+
+
+
+
+
+
+
+
+	return 0;
+}
+
